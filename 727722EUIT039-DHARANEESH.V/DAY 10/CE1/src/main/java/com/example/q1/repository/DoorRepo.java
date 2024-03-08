@@ -16,13 +16,13 @@ public interface DoorRepo extends JpaRepository<Door,Integer> {
    
 
 
-    
+    @Query("select d from Door d where d.color=?1")
     List<Door>findByColor(String color);
 
-
+    @Query("select d from Door d where d.doorType=?1")
     List<Door>findByDoorType(String doorType);
 
-   
+    @Query("select d from Door d where d.doorId=?1")
     List<Door>findByDoorId(int doorId);
 
    
